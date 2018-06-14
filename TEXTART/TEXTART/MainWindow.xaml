@@ -1,0 +1,59 @@
+﻿<Window x:Class="TEXTART.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TEXTART"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        
+        <!-- 版面设计-->
+        <Grid.RowDefinitions>
+        
+        <!--上横条-->
+        <RowDefinition></RowDefinition>
+        <!--下横条-->
+        <RowDefinition Height="300"></RowDefinition>
+           
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions >
+       
+        <!--左竖条-->
+        <ColumnDefinition Width=" 100" ></ColumnDefinition>
+        <!-- 右竖条-->
+        <ColumnDefinition ></ColumnDefinition>
+            
+        </Grid.ColumnDefinitions>
+        <!--区域分块-->
+        <Border Background="Black" Grid.Column="0" Grid.Row="0" ></Border>
+        <Border Background="Black" Grid.Column="0"  Grid.Row="1"></Border>
+        <Border Grid.Column=" 1" Grid.Row="0" >
+        </Border>
+        <Border Grid.Column=" 1" Grid.Row="1" Background="White" >
+         <TextBox TextWrapping="Wrap" AcceptsReturn="True" x:Name="Textarea" Foreground="Gray" TextChanged="Textarea_TextChanged" FontSize="20"></TextBox>
+        </Border>
+        <Canvas Grid.Column=" 0" Grid.Row="1">
+        <Button Canvas.Left=" 10" Canvas.Top=" 40"  Foreground="White" Background="Black" BorderThickness="0"  x:Name="NewBtn" Click="NewBtn_Click">New</Button>
+        <Button Canvas.Left=" 10" Canvas.Top=" 70"  Foreground="White" Background="Black" BorderThickness="0"  x:Name="OpenBtn" Click="OpenBtn_Click">Open</Button>
+        <Button Canvas.Left=" 10" Canvas.Top=" 100" Foreground="White" Background="Black" BorderThickness="0"  x:Name="SaveBtn" Click="SaveBtn_Click">Save</Button>
+        <Button Canvas.Left=" 10" Canvas.Top=" 130" Foreground="White" Background="Black" BorderThickness="0" x:Name="SaveAsBtn" Click="SaveAsBtn_Click"  >Save As</Button>
+        <Button x:Name="ChangeSmall" Canvas.Left=" 10" Canvas.Top=" 170" FontSize="9" VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="White" Background="Black" BorderThickness="0" Click="ChangeSmall_Click" >A</Button>
+        <Button x:Name="ChangeNormal" Canvas.Left=" 25" Canvas.Top=" 166" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Background="Black" BorderThickness="0" Click="ChangeNormal_Click" >A</Button>
+        <Button x:Name="ChangeBig" Canvas.Left=" 44" Canvas.Top=" 162" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" BorderThickness="0" Background="Black" Click="ChangeBig_Click" >A</Button>
+        <Button x:Name="ChangeWhite" Canvas.Left=" 10" Canvas.Top=" 200" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"  Background="Black" Click="ChangeWhite_Click"    >●</Button>
+        <Button x:Name="ChangeGray" Canvas.Left=" 30" Canvas.Top=" 200" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Gray"   Background="Black" Click="ChangeGray_Click"    >●</Button>
+
+        </Canvas>
+        <Canvas Grid.Column=" 1" Grid.Row="0" x:Name="TitleBar" MouseMove="TitleBar_MouseMove">
+        <TextBox BorderThickness="0" Background="Gray"  Height=" 20" x:Name="Title" >FileName</TextBox>
+        <Button  Canvas.Left=" 340" Width="20" x:Name="MinBtn"  Click="MinBtn_Click" Background="White" BorderBrush="White" Foreground="Gray" >一</Button>
+        <Button  Canvas.Left=" 370" Width="20" x:Name="MaxBtn"  Click="MaxBtn_Click" Background="White" BorderBrush="White" Foreground="Gray">O</Button>
+        <Button  Canvas.Left=" 400" Width="20" x:Name="CloseBtn"  Click="CloseBtn_Click" Background="White" BorderBrush="White" Foreground="Gray">X</Button>
+           
+        </Canvas>
+
+
+    </Grid>
+</Window>
